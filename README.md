@@ -29,14 +29,6 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 
 ### Methodology: Data Modelling
 
-## Heart Disease Prediction Code Documentation
-
-### Introduction
-
-This repository contains code for predicting heart disease using machine learning techniques. The code encompasses data preprocessing, model training, evaluation, and generating prediction reports.
-
-### Methodology
-
 #### Data Preprocessing
 
 - **Loading and Cleaning Data**: The heart disease dataset is loaded using pandas, followed by dropping rows with missing values for simplicity.
