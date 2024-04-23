@@ -47,14 +47,76 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 
 #### Neural Network Model
 
-- **Preprocess the Data**: Applies transformations to the training and test data for consistency.
-- **Define the Model**: Constructs a neural network with input layer sized to the number of features, followed by two hidden layers with ReLU activation, and an output layer with a sigmoid activation function for binary classification.
-- **Compile, Train, and Evaluate the Model**: Compiles the model with the Adam optimizer and binary crossentropy loss, trains it on the processed training data, and evaluates its performance on the processed test data.
+Here are the updated pointers incorporating the specific details from your provided code snippet, which refines the overall workflow of data preprocessing, model definition, compilation, training, and evaluation:
+
+1. **Preprocess the Data**:
+
+   - Applies transformations to both training and test data using a preprocessor to ensure consistency. This includes fitting the preprocessor to the training data and transforming both training and test datasets.
+
+2. **Define the Model**:
+
+   - Constructs a neural network that starts with an input layer sized to the number of features from the processed data.
+   - Includes batch normalization after the input layer to standardize inputs to the next layer, improving stability and speed of training.
+   - Adds two hidden layers with 128 and 64 neurons respectively, both featuring ReLU activation and L2 regularization to reduce overfitting. Each layer is followed by dropout layers with dropout rates of 0.3 for the first two and 0.2 for the last hidden layer (32 neurons).
+   - Concludes with an output layer using a sigmoid activation function for binary classification, suitable for producing a probability output.
+
+3. **Compile, Train, and Evaluate the Model**:
+   - Compiles the model using a variety of optimizers (Adam, SGD with momentum, and RMSprop) and loss functions (binary crossentropy and Binary Focal Crossentropy), tailoring the model to different training dynamics and focus on class imbalance.
+   - Implements early stopping during training to halt training when the validation loss ceases to improve, preventing overfitting and enhancing generalization by restoring the best weights observed.
+   - Trains the model in silent mode (without verbose output) over 200 epochs with a batch size of 32 and a validation split of 20%, providing a method to monitor and prevent overfitting while optimizing the model parameters.
+   - Evaluates the model on the processed test data, calculating key performance metrics such as accuracy, precision, recall, F1 score, and ROC AUC to assess its predictive power.
+   - Visualizes training history for accuracy and loss to identify trends and potential issues in learning, such as overfitting or not learning adequately.
+
+These updates encapsulate the procedural details, showcasing a thorough approach to building and evaluating a neural network model that is both robust and tuned for optimal performance on binary classification tasks.
 
 ### Results
 
-- The stacked model exhibited promising performance with an accuracy of 90.22%, high precision (92.38%), robust recall (90.65%), and a balanced F1 score (91.51%).
-- The neural network achieved an accuracy of 85.87%, which was lower than the stacked model's accuracy.
+---
+
+When evaluating the performance of the Stacked Model against the models trained using different optimizers (Adam, SGD, and RMSprop), we analyze their accuracy, precision, recall, F1 score, and ROC AUC to determine the overall best model.
+
+1. **Accuracy**:
+
+   - **Stacked Model:** 90.22%
+   - **Adam:** 88.04%
+   - **SGD:** 86.41%
+   - **RMSprop:** 88.04%
+   - The Stacked Model has the highest accuracy.
+
+2. **Precision**:
+
+   - **Stacked Model:** 92.38%
+   - **Adam:** 89.72%
+   - **SGD:** 89.42%
+   - **RMSprop:** 89.72%
+   - The Stacked Model outperforms in terms of precision, making the fewest false positive errors.
+
+3. **Recall**:
+
+   - **Stacked Model:** 90.65%
+   - **Adam:** 89.72%
+   - **SGD:** 86.92%
+   - **RMSprop:** 89.72%
+   - Again, the Stacked Model leads with the highest recall, effectively identifying most true positives.
+
+4. **F1 Score**:
+
+   - **Stacked Model:** 91.51%
+   - **Adam:** 89.72%
+   - **SGD:** 88.15%
+   - **RMSprop:** 89.72%
+   - The Stacked Model exhibits the best balance between precision and recall.
+
+5. **ROC AUC**:
+   - **Stacked Model:** 90.13%
+   - **Adam:** 93.49%
+   - **SGD:** 93.31%
+   - **RMSprop:** 93.62%
+   - The neural network models outperform the Stacked Model in this metric, with RMSprop achieving the highest ROC AUC.
+
+The **Stacked Model** consistently achieves higher accuracy, precision, recall, and F1 score than the models trained with Adam, SGD, and RMSprop. This indicates a superior balance of identifying true positives and minimizing false positives while generally making more correct predictions across the board.
+
+The only metric where the neural network models (particularly RMSprop) excel is ROC AUC, which measures the model's ability to discriminate between classes at various threshold settings. RMSprop's slightly higher ROC AUC suggests it might be better suited for applications where the discrimination between classes is more critical than the absolute number of correct predictions.
 
 ### Report Generation
 
