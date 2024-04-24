@@ -1,6 +1,6 @@
 # DSAI Mini Project
 
-SC1015 Mini Project 2024 (Group)
+SC1015 Mini Project 2024 (FCMB / Group 8)
 
 ## Title: Early Prediction of Heart Failure Using Clinical Features
 
@@ -25,7 +25,7 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 - **Distribution plots for all numerical variables**: Plots histograms for each numerical variable to visualize their distributions.
 - **Count plots for all categorical variables**: Plots count plots for each categorical variable to visualize their distributions.
 - **Correlation heatmap**: Displays a heatmap to visualize the correlation between numerical variables.
-- **Pairplot to visualize relationships between numerical variables**: Plots a pairplot to visualize relationships between numerical variables.
+- **Radar Chart**: to compare multiple variables simultaneously for different group
 
 ### Methodology: Data Modelling
 
