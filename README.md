@@ -1,6 +1,8 @@
 # DSAI Mini Project
 
 SC1015 Mini Project 2024 (FCMB / Group 8)
+Video Link: https://youtu.be/UMGJHAsLfcg
+Slides: Heart_Failure_Analysis.pdf
 
 ## Title: Early Prediction of Heart Failure Using Clinical Features
 
@@ -20,6 +22,8 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 
 ### Methodology: Data Visualisation
 
+#### MiniProject_DataVis.ipynb
+
 - **Basic Data Summary**: Prints the shape of the dataset and displays the first 5 rows.
 - **Summary statistics for numerical variables**: Displays summary statistics such as count, mean, standard deviation, minimum, maximum, and quartiles for numerical variables.
 - **Distribution plots for all numerical variables**: Plots histograms for each numerical variable to visualize their distributions.
@@ -37,6 +41,8 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 - Presence of Heart Disease outcome shows a nearly even split in the dataset, suggesting our dataset has a balanced representation of cases with and without heart disease, which is ideal for model training.
 
 ### Methodology: Data Modelling
+
+#### MiniProject_Model.ipynb
 
 #### Data Preprocessing
 
