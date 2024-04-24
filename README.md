@@ -1,7 +1,7 @@
 # DSAI Mini Project
 
-SC1015 Mini Project 2024 (FCMB / Group 8)
-Video Link: https://youtu.be/UMGJHAsLfcg
+SC1015 Mini Project 2024 (FCMB / Group 8)  
+Video Link: https://youtu.be/UMGJHAsLfcg  
 Slides: Heart_Failure_Analysis.pdf
 
 ## Title: Early Prediction of Heart Failure Using Clinical Features
