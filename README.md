@@ -27,6 +27,15 @@ The dataset, titled “Heart Failure Prediction Dataset,” comprises medical re
 - **Correlation heatmap**: Displays a heatmap to visualize the correlation between numerical variables.
 - **Radar Chart**: to compare multiple variables simultaneously for different group
 
+### Initial Data Driven Insights
+
+- The age distribution chart reveals a bell-shaped curve, suggesting a normally distributed age range with most subjects falling between 50 and 60 years old. Older age groups seem to be more represented in the dataset, which aligns with the increased risk of heart disease in the aging population. The correlation with heart disease is also positive, reaffirming the need to consider age as a significant risk factor in the predictive model.
+- For the variable RestingBP, While most subjects are within the normal range, the presence of subjects with higher values suggests a segment at risk. The correlation with heart disease is modest, indicating it should be a part of the risk assessment, albeit not the strongest predictor.
+- The cholesterol graph exhibits a right-skewed distribution, with a peak suggesting that most individuals have cholesterol levels around the 200 to 300 mg/dL range. High cholesterol is a significant concern for heart disease.its negative correlation with 'MaxHR' suggests that individuals with higher cholesterol might have reduced cardiac performance. Its negative correlation with heart disease in the heatmap may need further investigation, as higher cholesterol is typically a risk factor for heart disease.
+- In the fasting blood sugar chart, we see a bimodal distribution, where most individuals have a fasting blood sugar below the diabetes threshold, but a substantial number exceed it, highlighting a subgroup at elevated risk.Its positive correlation with heart disease reaffirms its inclusion in the predictive model.
+- The MaxHR data portrays a near-normal distribution, with some outliers. A higher maximum heart rate during exercise is generally healthier, as shown by the negative correlation with HeartDisease.
+- Presence of Heart Disease outcome shows a nearly even split in the dataset, suggesting our dataset has a balanced representation of cases with and without heart disease, which is ideal for model training.
+
 ### Methodology: Data Modelling
 
 #### Data Preprocessing
@@ -117,6 +126,10 @@ When evaluating the performance of the Stacked Model against the models trained 
 The **Stacked Model** consistently achieves higher accuracy, precision, recall, and F1 score than the models trained with Adam, SGD, and RMSprop. This indicates a superior balance of identifying true positives and minimizing false positives while generally making more correct predictions across the board.
 
 The only metric where the neural network models (particularly RMSprop) excel is ROC AUC, which measures the model's ability to discriminate between classes at various threshold settings. RMSprop's slightly higher ROC AUC suggests it might be better suited for applications where the discrimination between classes is more critical than the absolute number of correct predictions.
+
+### Predictions
+
+We processed input data to match the preprocessing requirements for the model. Once the data is prepared with all features, including newly calculated polynomial and interaction terms, it is fed into the pipeline. The model predicts the presence of heart disease and calculates the probability of the prediction. For example, for the data user_input_1, the model was able to predict no heart disease with the probability of 0.1214. Similarly, for the user_input_2, the model was able to predict heart disease with the probability of 0.5513. After receiving predictions, the application generates a PDF report, which includes graphical representations of risk over time and a pie chart showing the overall risk distribution.
 
 ### Report Generation
 
